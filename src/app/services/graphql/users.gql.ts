@@ -58,18 +58,8 @@ export class UserByUsernameGQL extends Query<UsersResponses> {
 })
 export class RegisterUserGQL extends Mutation {
   document = gql`
-    mutation(
-      $username: String!
-      $password: String!
-      $firstName: String!
-      $lastName: String!
-    ) {
-      createUser(
-        username: $username
-        password: $password
-        firstName: $firstName
-        lastName: $lastName
-      ) {
+    mutation($user:UserInput!){
+      createUser(user: $user){
         id
         username
       }

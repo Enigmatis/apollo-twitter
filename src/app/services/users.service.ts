@@ -18,7 +18,7 @@ export class UsersService {
 
   registerUser(userToRegister: User): Observable<FetchResult<{}>> {
     return this.registerUserGQL.mutate({
-      ...userToRegister
+      user:userToRegister
     });
   }
 }
